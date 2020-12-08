@@ -319,12 +319,12 @@ import { ref, onMounted, watch, toRefs } from 'vue'
 
 // 在我们组件中
 setup (props) {
-  // 使用 `toRefs` 创建对prop的 `user` property 的响应式引用
+  // 使用 `toRefs` 创建对props的 `user` property 的响应式引用
   const { user } = toRefs(props)
 
   const repositories = ref([])
   const getUserRepositories = async () => {
-    // 更新 `prop.user` 到 `user.value` 访问引用值
+    // 更新 `props.user` 到 `user.value` 访问引用值
     repositories.value = await fetchUserRepositories(user.value)
   }
 
